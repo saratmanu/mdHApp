@@ -10,17 +10,11 @@ pool:
   my-local-pool
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
     - task: NodeTool@0
       inputs:
         versionSource: 'spec'
         versionSpec: '18.x'
-     - script: |
-      npm install
-      npm run build
-    displayName: 'Install Dependencies and Build App'
+    - script: |
+        npm install
+        npm run build
+        displayName: 'Install Dependencies and Build App'

@@ -17,4 +17,4 @@ steps:
     - script: |
         npm install
         npm run build
-        displayName: 'Install Dependencies and Build App'
+      displayName: 'Install Dependencies and Build App'

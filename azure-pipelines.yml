@@ -24,4 +24,3 @@ steps:
       npm install
       npm run build
     displayName: 'Install Dependencies and Build App'
-  displayName: 'Run a multi-line script'

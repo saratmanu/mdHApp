@@ -15,6 +15,5 @@ steps:
         versionSource: 'spec'
         versionSpec: '18.x'
     - script: |
-        npm install
-        npm run build
+        npm install && npm run build
       displayName: 'Install Dependencies and Build App'

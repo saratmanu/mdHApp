@@ -17,3 +17,17 @@ steps:
     - script: |
         npm install && npm run build
       displayName: 'Install Dependencies and Build App'
+    
+    - task: CopyFiles@2
+      inputs:
+          SourceFolder: '$(Build.SourcesDirectory)/build'   # Location of your React build folder
+          Contents: '**'                   # Copies all files inside 'build'
+          TargetFolder: '$(Build.ArtifactStagingDirectory)/build'  # Where artifacts are staged
+      displayName: 'Copy Build Files'
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/build'
+        ArtifactName: 'react-app-build'
+        publishLocation: 'Container'
+      displayName: 'Publish Artifact'

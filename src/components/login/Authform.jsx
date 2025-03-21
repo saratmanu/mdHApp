@@ -27,7 +27,7 @@ const AuthForm = () => {
         const endpoint = isLogin ? 'api/auth/login' : 'api/auth/signup';
 
         try {
-            const response = await axios.post(`http://localhost:8080/${endpoint}`,{id : crypto.randomUUID() ,email,password,name:email});
+            const response = await axios.post(`https://004firstapp-hrg4fka8epa4fbc5.centralindia-01.azurewebsites.net/${endpoint}`,{id : crypto.randomUUID() ,email,password,name:email});
 
             if (response !=null && response.data !=null && response.data != '') {
                // localStorage.setItem('token', response.data.token);
